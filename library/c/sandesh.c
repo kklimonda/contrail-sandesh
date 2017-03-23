@@ -18,6 +18,9 @@
 sandesh_info_t *
 sandesh_find_info (sandesh_info_t *infos, const char *name) {
     int sidx = 0;
+    if (name == NULL) {
+        return NULL;
+    }
     while (infos[sidx].name != NULL) {
         if (strcmp(infos[sidx].name, name) == 0) {
             return &infos[sidx];
